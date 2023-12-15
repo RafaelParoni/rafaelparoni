@@ -1,7 +1,7 @@
 <h1 align="center">Olá 👋, eu sou o Rafael Paroni</h1>
 <h3 align="center">Sou um rapaz que estuda desenvolvimento web nas horas livres e pretende trabalhar nesta área</h3>
 <h5 align="center">Nascido no Brasil</h5>
-<h5 align="center">Meu [site](https://rafaelparoni.vercel.app/) </h5>
+<h5 align="center">Meu ![site](https://rafaelparoni.vercel.app/) </h5>
 
 <h3 align="center">Linguagens e Tecnologias:</h3>
 
@@ -12,9 +12,9 @@
 
 <div align="center"> 
   <h3 align="center">Meus principais projetos: </h3>
-  <p algin='left'> [SaveMovie](https://save-movie.vercel.app/)</p>
-  <p algin='left'> [Taskins](https://taskin-five.vercel.app/)</p>
-  <p algin='left'> [Emoji Universe](https://emoji-universe.vercel.app/pt/)https://emoji-universe.vercel.app/</p>
+  <p algin='left'> ![SaveMovie](https://save-movie.vercel.app/)</p>
+  <p algin='left'> ![Taskins](https://taskin-five.vercel.app/)</p>
+  <p algin='left'> ![Emoji Universe](https://emoji-universe.vercel.app/pt/)https://emoji-universe.vercel.app/</p>
 </div>
 
 
