@@ -12,9 +12,9 @@
 
 <div align="center"> 
   <h3 align="center">Meus principais projetos: </h3>
-  <p algin='left'> ![SaveMovie](https://save-movie.vercel.app/)</p>
-  <p algin='left'> ![Taskins](https://taskin-five.vercel.app/)</p>
-  <p algin='left'> ![Emoji Universe](https://emoji-universe.vercel.app/pt/)https://emoji-universe.vercel.app/</p>
+  <p algin='left'> [SaveMovie](https://save-movie.vercel.app/)</p>
+  <p algin='left'> [Taskins](https://taskin-five.vercel.app/)</p>
+  <p algin='left'> (Emoji Universe)[https://emoji-universe.vercel.app/pt/]</p>
 </div>
 
 
