@@ -11,11 +11,11 @@
 
 <div align="center"> 
   <h3 align="center">Meus principais projetos: </h3>
-  <p algin='left'> SaveMovie: https://save-movie.vercel.app/</p>
-  <p algin='left'> Taskins: https://taskin-five.vercel.app/</p>
-  <p algin='left'> Emoji Universe: https://emoji-universe.vercel.app/pt/</p>
-  <p algin='left'> QrCustom: https://qr-custom.vercel.app/</p>
-  <p algin='left'> Downloader: https://downloader-app-sable.vercel.app/</p>
+  <p algin='left'> SaveMovie: <a href='https://save-movie.vercel.app/'> save-movie.vercel.app/ </a> </p>
+  <p algin='left'> Taskins: <a href="https://taskin-five.vercel.app/"> taskin-five.vercel.app/ </a></p> 
+  <p algin='left'> Emoji Universe: <a href="https://emoji-universe.vercel.app/pt/"> emoji-universe.vercel.app/pt/ </a></p>
+  <p algin='left'> QrCustom: <a href=" https://qr-custom.vercel.app/"> qr-custom.vercel.app/ </a></p>
+  <p algin='left'> Downloader: <a href="https://downloader-app-sable.vercel.app/"> downloader-app-sable.vercel.app/ </a></p>
 </div>
 
 
