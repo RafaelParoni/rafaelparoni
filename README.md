@@ -23,4 +23,4 @@
   <h3 align="center">Meu portfolio <br/> link: <br/> <a href="https://rafaelparoni.vercel.app/">rafaelparoni.vercel.app/</a> <br/> QrCode: </h3>
   <img  src='https://raw.githubusercontent.com/RafaelParoni/rafaelparoni/main/QRCustom-https___rafaelparoni_vercel_app_%20(5).png' />
 </div>
-
+<p>Qr Code feito pelo <a href='https://qr-custom.vercel.app/'> QrCustom </a></p>
