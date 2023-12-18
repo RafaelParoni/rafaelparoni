@@ -23,5 +23,5 @@
 <h5 align="center">Meu site <a href="https://rafaelparoni.vercel.app/">rafaelparoni.vercel.app/</a> </h5>
 
 
-<img src='https://raw.githubusercontent.com/RafaelParoni/rafaelparoni/7d744db50b981c7a674047c68144c51c2cfc11e3/QRCustom-https___rafaelparoni_vercel_app___5_-removebg-preview.svg' />
+<img src='https://raw.githubusercontent.com/RafaelParoni/rafaelparoni/main/QRCustom-https___rafaelparoni_vercel_app_%20(5).png' />
 
