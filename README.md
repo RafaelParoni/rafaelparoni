@@ -20,7 +20,7 @@
 
 
 <div  align="center">
-  <h3 align="center">Meu site: <a href="https://rafaelparoni.vercel.app/">Lnik: rafaelparoni.vercel.app/</a> QrCode: </h3>
+  <h3 align="center">Meu site: <a href="https://rafaelparoni.vercel.app/">Lnik: rafaelparoni.vercel.app/</a> <br/> QrCode: </h3>
   <img  src='https://raw.githubusercontent.com/RafaelParoni/rafaelparoni/main/QRCustom-https___rafaelparoni_vercel_app_%20(5).png' />
 </div>
 
