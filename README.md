@@ -7,9 +7,9 @@
 
 ### 🚀 Sobre Mim
 - 🎓 Estudante de **Ciência da Computação**.
-- 🇧🇷 Baseado no Brasil.
+- 🇧🇷 Morando no Brasil.
 - 🛠️ Focado em **Desenvolvimento Web** e **Automações de Processos**.
-- 🤖 Desenvolvendo soluções inteligentes com **Python**, **n8n** e **IA**.
+- 🤖 Desenvolvendo soluções inteligentes com **Python**, **n8n**, **IA** e **Javascript**.
 
 ---
 
