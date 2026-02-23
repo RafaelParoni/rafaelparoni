@@ -1,31 +1,68 @@
-<h1 align="center">Olá 👋, eu sou o Rafael Paroni</h1>
-<h3 align="center">Sou um rapaz que estuda desenvolvimento web nas horas livres e pretende trabalhar nesta área</h3>
-<h5 align="center">Nascido no Brasil</h5>
+# Olá 👋, eu sou o Rafael Paroni
 
-<h3 align="center">Linguagens e Tecnologias:</h3>
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=RafaelParoni&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafaelParoni&layout=compact&langs_count=7&theme=tokyonight"/>
+</div>
 
-<p align="center"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">  </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">  </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a>  <a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/> </a>
-<a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/nodejs/nodejs-original.svg" alt="reactnative" width="40" height="40"/> </a>
-<a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/npm/npm-original-wordmark.svg" alt="reactnative" width="40" height="40"/> </a>
-<a href="https://socket.io/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/socketio/socketio-original.svg" alt="socket io" width="40" height="40"/> </a>
-<a href="https://axios-http.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/axios/axios-plain.svg" alt="axios" width="40" height="40"/> </a>
+### 🚀 Sobre Mim
+- 🎓 Estudante de **Ciência da Computação**.
+- 🇧🇷 Baseado no Brasil.
+- 🛠️ Focado em **Desenvolvimento Web** e **Automações de Processos**.
+- 🤖 Desenvolvendo soluções inteligentes com **Python**, **n8n** e **IA**.
 
+---
 
+### 🛠️ Tecnologias e Ferramentas
+
+**Frontend & Mobile**
+<p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
 </p>
 
+**Backend & Automation**
+<p align="left">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white" />
+  <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white" />
+</p>
 
-<div align="center"> 
-  <h3 align="center">Meus principais projetos: </h3>
-  <p algin='left'> SaveMovie: <a href='https://save-movie.vercel.app/'> save-movie.vercel.app/ </a> </p>
-  <p algin='left'> Taskins: <a href="https://taskin-five.vercel.app/"> taskin-five.vercel.app/ </a></p> 
-  <p algin='left'> Emoji Universe: <a href="https://emoji-universe.vercel.app/pt/"> emoji-universe.vercel.app/pt/ </a></p>
-  <p algin='left'> QrCustom: <a href="https://qr-custom.vercel.app/"> qr-custom.vercel.app/ </a></p>
-  <p algin='left'> Universal Media Downloader: <a href="https://universal-media-app.vercel.app/"> downloader-app-sable.vercel.app/ </a></p>
+**Banco de Dados & Cloud**
+<p align="left">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+</p>
+
+---
+
+### 📂 Projetos em Destaque
+
+| Projeto | Descrição | Link |
+| :--- | :--- | :--- |
+| **SaveMovie** | Catálogo pessoal de filmes. | [Visualizar](https://save-movie.vercel.app/) |
+| **Taskins** | Gerenciador de tarefas eficiente. | [Visualizar](https://taskin-five.vercel.app/) |
+| **Emoji Universe** | Explorador interativo de emojis. | [Visualizar](https://emoji-universe.vercel.app/pt/) |
+| **QrCustom** | Gerador de QR Codes personalizados. | [Visualizar](https://qr-custom.vercel.app/) |
+| **Media Downloader** | Download de mídias de diversas plataformas. | [Visualizar](https://universal-media-app.vercel.app/) |
+
+---
+
+### 🌐 Conecte-se Comigo
+<div align="center">
+  <a href="https://rafaelparoni.vercel.app/">
+    <img src="https://img.shields.io/badge/Meu%20Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
 </div>
 
+<br/>
 
-<div  align="center">
-  <h3 align="center">Meu portfolio <br/> link: <br/> <a href="https://rafaelparoni.vercel.app/">rafaelparoni.vercel.app/</a> <br/> QrCode: </h3>
-  <img  src='https://raw.githubusercontent.com/RafaelParoni/rafaelparoni/main/QRCustom-https___rafaelparoni_vercel_app_%20(5).png' />
+<div align="center">
+  <p>Escaneie para acessar meu portfólio:</p>
+  <img src='https://raw.githubusercontent.com/RafaelParoni/rafaelparoni/main/QRCustom-https___rafaelparoni_vercel_app_%20(5).png' width="150px" />
+  <br/>
+  <sub>QR Code gerado com o <a href='https://qr-custom.vercel.app/'>QrCustom</a></sub>
 </div>
-<h6>QR Code feito pelo <a href='https://qr-custom.vercel.app/'> QrCustom </a></h6>
