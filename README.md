@@ -1,7 +1,7 @@
 # Olá 👋, eu sou o Rafael Paroni
 
 <div align="center">
-  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=RafaelParoni&theme=tokyonight" />
+  <a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=RafaelParoni&theme=dark&hide_border=true&locale=pt_BR&short_numbers=true" alt="GitHub Streak" /></a>
 </div>
 
 ### 🚀 Sobre Mim
