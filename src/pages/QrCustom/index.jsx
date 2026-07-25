@@ -68,6 +68,16 @@ function QrCustom() {
     };
   }, []);
 
+  // Update Document Title for this page
+  useEffect(() => {
+    const originalTitle = document.title;
+    document.title = "Qr Custom";
+
+    return () => {
+      document.title = originalTitle;
+    };
+  }, []);
+
   // Update theme on document
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
