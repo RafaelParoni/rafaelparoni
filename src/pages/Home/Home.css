@@ -49,7 +49,7 @@ body {
 }
 
 /* Glassmorphism Navbar */
-.navbar {
+.navbar-home {
   position: fixed;
   top: 0;
   width: 100%;
@@ -712,7 +712,7 @@ section {
     display: none;
   }
   
-  .navbar {
+  .navbar-home {
     top: auto;
     bottom: 0;
     height: auto;

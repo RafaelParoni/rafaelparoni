@@ -99,8 +99,8 @@ function QrCustom() {
 
   return (
     <div className="app-container">
-      <nav className="navbar">
-        <div className="navbar-left" style={{ display: 'flex', gap: '1rem' }}>
+      <nav className="navbar-qr">
+        <div className="navbar-qr-left" style={{ display: 'flex', gap: '1rem' }}>
           <a href={import.meta.env.VITE_INSTAGRAM} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="Instagram">
             <FaInstagram size={24} />
           </a>
@@ -109,15 +109,15 @@ function QrCustom() {
           </a>
         </div>
 
-        <div className="navbar-center">
+        <div className="navbar-qr-center">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <img src={qrCustomLogo} alt="Logo QR Custom" style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
-            <span className="navbar-brand text-white-forced" style={{ margin: 0 }}>QR Custom</span>
+            <span className="navbar-qr-brand text-white-forced" style={{ margin: 0 }}>QR Custom</span>
           </div>
-          <Link to="/" className="navbar-subtitle gradient-text" style={{ textDecoration: 'none', cursor: 'pointer' }}>By: Rafael Paroni</Link>
+          <Link to="/" className="navbar-qr-subtitle gradient-text" style={{ textDecoration: 'none', cursor: 'pointer' }}>By: Rafael Paroni</Link>
         </div>
 
-        <div className="navbar-right">
+        <div className="navbar-qr-right">
           <select
             className="lang-select"
             value={lang}

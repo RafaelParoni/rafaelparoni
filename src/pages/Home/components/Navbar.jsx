@@ -32,7 +32,7 @@ export default function Navbar() {
         </h2>
       </div>
 
-      <nav className="navbar">
+      <nav className="navbar-home">
         <div className="nav-brand">
           <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
             Rafael Paroni
