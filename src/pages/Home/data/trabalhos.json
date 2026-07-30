@@ -64,11 +64,11 @@
     "prioridade": 5,
     "destaque": false,
     "icon": "Back-end/Front-end",
-    "link": "",
+    "link": "/paroni-deck",
     "github": "https://github.com/RafaelParoni/ParoniDeck",
     "tags": [
-      "Javascript",
-      "Html"
+      "React.js",
+      "Node.js"
     ]
   },
   {
