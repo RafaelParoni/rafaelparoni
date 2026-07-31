@@ -45,6 +45,7 @@ body {
   /* fallback */
   background: var(--primary-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -238,6 +239,7 @@ body {
   margin-bottom: 1rem;
   background: linear-gradient(135deg, var(--text-color) 0%, var(--text-muted) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -681,6 +683,7 @@ section {
 .contact-icon {
   margin-bottom: 0.5rem;
   transition: transform 0.3s ease, filter 0.3s ease;
+  display: flex;
 }
 
 .contact-card:hover .contact-icon {

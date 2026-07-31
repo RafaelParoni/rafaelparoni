@@ -12,6 +12,7 @@ function App() {
 
   const githubLink = import.meta.env.VITE_GITHUB_LINK || 'https://github.com/RafaelParoni';
   const instagramUser = import.meta.env.VITE_INSTAGRAM || 'rafaeparroni';
+  const linkedin = import.meta.env.VITE_LINKEDIN || 'rafael-paroni-43961a301';
   const instagramLink = `https://instagram.com/${instagramUser}`;
   const email = import.meta.env.VITE_EMAIL || 'rafaelparonisilvaa@gmail.com';
   
@@ -41,6 +42,14 @@ function App() {
               </div>
               <h3>GitHub</h3>
               <p>{githubLink.split('/').pop()}</p>
+            </a>
+
+            <a href={`https://www.linkedin.com/in/${linkedin}/`} target="_blank" rel="noopener noreferrer" className="contact-card">
+              <div className="contact-icon" style={{ color: '#2593d3ff' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <h3>Linkedin</h3>
+              <p>{linkedin}</p>
             </a>
 
             <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="contact-card">

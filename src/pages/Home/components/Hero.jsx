@@ -13,7 +13,7 @@ const GithubIcon = ({ size }) => (
 export default function Hero({ onOpenResume }) {
   const { t } = useLanguage();
   const roles = t('hero.roles');
-  
+
   const [roleIndex, setRoleIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -30,12 +30,12 @@ export default function Hero({ onOpenResume }) {
       } else if (isDeleting && currentText === '') {
         setIsDeleting(false);
         setRoleIndex((prev) => (prev + 1) % (roles.length || 1));
-        setTypingSpeed(150); 
+        setTypingSpeed(150);
       } else {
-        const nextText = isDeleting 
+        const nextText = isDeleting
           ? fullText.substring(0, currentText.length - 1)
           : fullText.substring(0, currentText.length + 1);
-          
+
         setCurrentText(nextText);
         setTypingSpeed(isDeleting ? 50 : 150);
         timeout = setTimeout(handleType, typingSpeed);
@@ -64,9 +64,13 @@ export default function Hero({ onOpenResume }) {
 
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '';
   const githubLink = import.meta.env.VITE_GITHUB_LINK || '#';
+  const linkedin = import.meta.env.VITE_LINKEDIN || 'rafael-paroni-43961a301';
 
   const formatWhatsappLink = () => {
     return `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`;
+  };
+  const formatLinkedinLink = () => {
+    return `https://www.linkedin.com/in/${linkedin}`;
   };
 
   return (
@@ -75,46 +79,61 @@ export default function Hero({ onOpenResume }) {
         <div className="hero-content">
           <p className="greeting text-gradient">{t('hero.greeting')}</p>
           <h1 className="title">Rafael Paroni</h1>
-          
+
           <h3 className="subtitle">
             {t('hero.rolePrefix')} <span className="typewriter-text text-gradient">{currentText}</span>
           </h3>
-          
+
           <p className="description">
             {t('hero.description')}
           </p>
-          
+
           <div className="btn-group" style={{ marginBottom: '1rem' }}>
             <button onClick={onOpenResume} className="btn btn-primary">
               <FileText size={20} />
               {t('hero.resumeBtn')}
             </button>
-            
+
+
             <Link to="trabalhos" smooth={true} duration={500} offset={-70} className="btn btn-outline" style={{ cursor: 'pointer' }}>
               <Briefcase size={20} />
               {t('hero.worksBtn')}
             </Link>
+
+            <a
+              href={formatLinkedinLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline"
+            >
+              <div className="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
+              </div>
+              Linkedin
+            </a>
           </div>
 
           <div className="btn-group">
-            <a 
-              href={formatWhatsappLink()} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={formatWhatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-outline"
             >
               <MessageCircle size={20} />
               Whatsapp
             </a>
-            
-            <a 
-              href={githubLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+
+
+
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-outline"
             >
               <GithubIcon size={20} />
-              Github 
+              Github
               {githubRepos !== null && (
                 <span style={{ fontSize: '0.85rem', marginLeft: '6px', opacity: 0.8 }}>
                   ({githubRepos} {t('hero.githubProjects')})
@@ -123,11 +142,11 @@ export default function Hero({ onOpenResume }) {
             </a>
           </div>
         </div>
-        
+
         <div className="hero-image-container">
-          <img 
-            src="/aboutImg.png" 
-            alt="Rafael Paroni" 
+          <img
+            src="/aboutImg.png"
+            alt="Rafael Paroni"
             className="hero-image"
           />
         </div>
