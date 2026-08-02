@@ -5,6 +5,7 @@ import App from './pages/Home'
 import ParoniDownloader from './pages/ParoniDownloader'
 import QrCustom from './pages/QrCustom'
 import ParoniDeck from './pages/ParoniDeck'
+import FocalFrame from './pages/FocalFrame'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,6 +15,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/downloader" element={<ParoniDownloader />} />
         <Route path="/qr-custom" element={<QrCustom />} />
         <Route path="/paroni-deck" element={<ParoniDeck />} />
+        <Route path="/focal-frame" element={<FocalFrame />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

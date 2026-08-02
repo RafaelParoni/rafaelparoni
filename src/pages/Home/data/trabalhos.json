@@ -25,7 +25,7 @@
       "en": "A Discord bot built for the streamer 'MarsVolanss,' designed primarily to notify her Discord community whenever she goes live!",
       "es": "Un bot de Discord creado para la streamer «MarsVolanss», cuyo objetivo principal es notificar a los miembros de su servidor de Discord cuando empieza su directo."
     },
-    "prioridade": 8,
+    "prioridade": 1,
     "destaque": false,
     "icon": "Bot",
     "link": "",
@@ -61,7 +61,7 @@
       "en": "A modern web-based Stream Deck to control Soundpad and adjust individual app volumes (Spotify, Chrome) directly from your phone.",
       "es": "Un Stream Deck web moderno para controlar Soundpad y ajustar el volumen de aplicaciones individuales (Spotify, Chrome) directamente desde el móvil."
     },
-    "prioridade": 5,
+    "prioridade": 96,
     "destaque": false,
     "icon": "Back-end/Front-end",
     "link": "/paroni-deck",
@@ -73,14 +73,14 @@
   },
   {
     "id": 5,
-    "nome": "Paroni FastClip",
+    "nome": "FastClip",
     "descricao": {
       "pt": "FastClip Paroni é uma aplicação web moderna e extremamente rápida para clipping de vídeos longos.",
       "en": "FastClip Paroni is a modern, lightning-fast web app for clipping long-form videos.",
       "es": "FastClip Paroni es una aplicación web moderna y extremadamente rápida para cortar vídeos largos."
     },
-    "prioridade": 5,
-    "destaque": false,
+    "prioridade": 97,
+    "destaque": true,
     "icon": "Front-end",
     "link": "https://fast-clip.vercel.app/",
     "github": "https://github.com/RafaelParoni/FastClipParoni",
@@ -98,7 +98,7 @@
       "en": "A FREE QR Code Creator in a customized way.",
       "es": "Un creador de QR Code GRATIS de forma personalizada."
     },
-    "prioridade": 97,
+    "prioridade": 95,
     "destaque": false,
     "icon": "Front-end",
     "link": "/qr-custom",
@@ -106,6 +106,24 @@
     "tags": [
       "React.js",
       "qrcode.react"
+    ]
+  },
+  {
+    "id": 7,
+    "nome": "Focal Frame",
+    "descricao": {
+      "pt": "Aplicação web para captura de frames de vídeos.",
+      "en": "Web application for capturing video frames.",
+      "es": "Aplicación web para capturar fotogramas de vídeos."
+    },
+    "prioridade": 94,
+    "destaque": false,
+    "icon": "Front-end",
+    "link": "/focal-frame",
+    "github": "https://github.com/RafaelParoni/portifolio/tree/main/src/pages/FocalFrame",
+    "tags": [
+      "React.js",
+      "Vanilla JS"
     ]
   }
 ]
