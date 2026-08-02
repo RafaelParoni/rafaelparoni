@@ -20,8 +20,18 @@
     <meta name="twitter:image" content="https://rafaelparoni.vercel.app/favicon.png" />
 
     <title>Rafael Paroni</title>
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          var theme = savedTheme ? savedTheme : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.style.backgroundColor = theme === 'dark' ? '#0f172a' : '#f8fafc';
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body>
+  <body style="margin: 0; padding: 0;">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
