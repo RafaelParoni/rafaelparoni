@@ -125,5 +125,24 @@
       "React.js",
       "Vanilla JS"
     ]
+  },
+  {
+    "id": 8,
+    "nome": "Audio Sync",
+    "descricao": {
+      "pt": "Espelhe o áudio do seu computador em tempo real para outra máquina na rede local.",
+      "en": "Mirror your computer's audio in real-time to another machine on the local network.",
+      "es": "Duplique el audio de su computadora en tiempo real a otra máquina en la red local."
+    },
+    "prioridade": 93,
+    "destaque": false,
+    "icon": "Code",
+    "link": "/audio-sync",
+    "github": "https://github.com/RafaelParoni/AUDIO-SYNC",
+    "tags": [
+      "Python",
+      "pyaudiowpatch",
+      "CustomTkinter"
+    ]
   }
 ]
