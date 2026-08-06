@@ -7,6 +7,8 @@ import QrCustom from './pages/QrCustom'
 import ParoniDeck from './pages/ParoniDeck'
 import FocalFrame from './pages/FocalFrame'
 
+import AudioSync from './pages/AudioSync'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -16,6 +18,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/qr-custom" element={<QrCustom />} />
         <Route path="/paroni-deck" element={<ParoniDeck />} />
         <Route path="/focal-frame" element={<FocalFrame />} />
+        <Route path="/audio-sync" element={<AudioSync />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
