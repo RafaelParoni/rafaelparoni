@@ -59,6 +59,7 @@ const translations = {
     latestVersion: "Baixar Setup (.exe)",
     versionPrefix: "Versão",
     mbText: "MB",
+    mobileWarning: "⚠️ Nota: O AudioSync é um software para Desktop (Windows) e não é compatível com celulares. Acesse por um PC para realizar o download.",
     faqTitle: "Dúvidas Frequentes",
     faqItems: [
       {
@@ -123,6 +124,7 @@ const translations = {
     latestVersion: "Download Setup (.exe)",
     versionPrefix: "Version",
     mbText: "MB",
+    mobileWarning: "⚠️ Note: AudioSync is a Desktop software (Windows) and is not compatible with mobile devices. Access via a PC to download.",
     faqTitle: "Frequently Asked Questions",
     faqItems: [
       {
@@ -187,6 +189,7 @@ const translations = {
     latestVersion: "Descargar Setup (.exe)",
     versionPrefix: "Versión",
     mbText: "MB",
+    mobileWarning: "⚠️ Nota: AudioSync es un software de escritorio (Windows) y no es compatible con dispositivos móviles. Acceda a través de una PC para descargar.",
     faqTitle: "Preguntas Frecuentes",
     faqItems: [
       {
@@ -206,6 +209,16 @@ export default function AudioSync() {
   const [lang, setLang] = useState('pt');
   const [release, setRelease] = useState(null);
   const [expandedFaq, setExpandedFaq] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const featureColors = [
     '#06B6D4', // Ciano
@@ -341,10 +354,17 @@ export default function AudioSync() {
         </p>
 
         <div className="sync-btn-group" style={{ justifyContent: 'center' }}>
-          <a href="#download" className="sync-btn sync-btn-primary" style={{ background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', border: 'none' }}>
-            <FaDownload />
-            {t.downloadBtn}
-          </a>
+          {isMobile ? (
+            <span className="sync-btn sync-btn-primary" style={{ background: 'var(--bg-color)', color: 'var(--text-muted)', border: '1px solid var(--border-color)', cursor: 'not-allowed', opacity: 0.7 }}>
+              <FaDownload />
+              {t.downloadBtn}
+            </span>
+          ) : (
+            <a href="#download" className="sync-btn sync-btn-primary" style={{ background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', border: 'none' }}>
+              <FaDownload />
+              {t.downloadBtn}
+            </a>
+          )}
           <a href="#recursos" className="sync-btn sync-btn-outline">
             <FaTools />
             {t.featuresBtn}
@@ -393,10 +413,23 @@ export default function AudioSync() {
 
           <br />
 
-          <a href={downloadLink} className="sync-btn sync-btn-primary" style={{ display: 'inline-flex', padding: '1rem 2.5rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', border: 'none' }}>
-            <FaDownload size={20} />
-            {t.latestVersion}
-          </a>
+          {isMobile && (
+            <div style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid #ef4444', color: '#ef4444', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem', textAlign: 'left', lineHeight: '1.5' }}>
+              {t.mobileWarning}
+            </div>
+          )}
+
+          {isMobile ? (
+            <span className="sync-btn sync-btn-primary" style={{ display: 'inline-flex', padding: '1rem 2.5rem', fontSize: '1.1rem', background: 'var(--bg-color)', color: 'var(--text-muted)', border: '1px solid var(--border-color)', cursor: 'not-allowed', opacity: 0.7 }}>
+              <FaDownload size={20} />
+              {t.latestVersion}
+            </span>
+          ) : (
+            <a href={downloadLink} className="sync-btn sync-btn-primary" style={{ display: 'inline-flex', padding: '1rem 2.5rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', border: 'none' }}>
+              <FaDownload size={20} />
+              {t.latestVersion}
+            </a>
+          )}
           
           <span className="sync-version-info" style={{ display: 'block', marginTop: '1rem' }}>
             {t.versionPrefix} {release?.tag_name || 'v1.1'} • Windows 10/11 • {release?.assets?.[0]?.size ? (release.assets[0].size / 1024 / 1024).toFixed(1) + ` ${t.mbText}` : `~20 ${t.mbText}`}
