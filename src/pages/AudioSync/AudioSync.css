@@ -1,0 +1,555 @@
+/* NAVBAR 100% ISOLADA PARA O PARONI DECK */
+.sync-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 50;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.sync-nav-left {
+  display: flex;
+  gap: 1rem;
+}
+
+.sync-nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.sync-nav-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.sync-nav-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.sync-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.sync-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.sync-icon-btn:hover {
+  background: var(--border-color);
+  transform: scale(1.05);
+}
+
+.sync-lang-select {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.sync-lang-select:hover {
+  border-color: var(--text-secondary);
+}
+
+.sync-lang-select option {
+  background: var(--bg-color);
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .sync-nav-center {
+    display: none;
+  }
+  .sync-nav {
+    padding: 0 1rem;
+  }
+}
+
+.paroni-sync-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sync-hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  background: radial-gradient(circle at 50% -20%, rgba(93, 224, 230, 0.15), transparent 60%);
+}
+
+.sync-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.sync-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.sync-toggle-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  margin: 0 auto 2rem;
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sync-toggle-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 56px;
+  height: 34px;
+  background: var(--gradient-brand);
+  border-radius: 17px;
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.sync-toggle-slider.slide-right {
+  transform: translateX(58px);
+}
+
+.sync-toggle-option {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.sync-toggle-option.text-white {
+  color: #ffffff;
+}
+
+.sync-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.sync-image-desktop {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.sync-image-mobile {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  border: 4px solid #1e293b;
+  transition: transform 0.3s ease;
+  rotate: 90deg;
+  margin: -150px 0; /* Remove o espaço vazio criado pela caixa invisível da imagem antes de girar */
+}
+
+.sync-image-desktop:hover {
+  transform: translateY(-10px);
+}
+
+.sync-image-mobile:hover {
+  transform: translateX(-10px);
+}
+
+.sync-features {
+  padding: 4rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sync-features-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--feature-color, #5DE0E6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.sync-note {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  color: #f87171;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .sync-nav-center {
+    display: none;
+  }
+  .sync-nav {
+    padding: 0 1rem;
+  }
+  .sync-hero {
+    padding: 6rem 1rem 3rem;
+  }
+  .sync-title {
+    font-size: 2.5rem;
+  }
+  .sync-subtitle {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  .sync-showcase {
+    flex-direction: column;
+  }
+  .sync-image-desktop {
+    max-width: 100%;
+  }
+  .sync-image-mobile {
+    margin: 0 auto; 
+    rotate: 0deg;
+    max-width: 80%;
+    height: auto;
+  }
+  .sync-image-mobile:hover {
+    transform: translateY(-10px);
+  }
+  .sync-btn-group {
+    flex-direction: column;
+    padding: 0 1.5rem;
+    gap: 1rem;
+  }
+  .sync-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .sync-features {
+    padding: 2rem 1rem 2rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .sync-download-section {
+    padding: 2rem 1rem 4rem;
+  }
+  .sync-download-card {
+    padding: 1.5rem;
+  }
+  .sync-download-card h2 {
+    font-size: 1.5rem;
+  }
+  .sync-req-list {
+    padding: 1rem;
+  }
+  .sync-req-list li {
+    font-size: 0.9rem;
+    align-items: flex-start;
+  }
+  .sync-faq-section {
+    padding: 0 1rem 4rem;
+  }
+  .sync-faq-header {
+    padding: 1rem;
+  }
+  .sync-faq-header h3 {
+    font-size: 1rem !important;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+.sync-btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.sync-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.sync-btn-primary {
+  background: var(--gradient-brand);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(93, 224, 230, 0.3);
+}
+
+.sync-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 224, 230, 0.4);
+  color: #fff;
+}
+
+.sync-btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.sync-btn-outline:hover {
+  border-color: #5DE0E6;
+  background: rgba(93, 224, 230, 0.05);
+}
+
+.sync-download-section {
+  padding: 4rem 2rem 8rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sync-download-card {
+  background: var(--surface-color);
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.sync-download-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sync-download-card p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.sync-version-info {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.sync-req-list {
+  text-align: left;
+  background: rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+}
+
+.sync-req-list h4 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.sync-req-list ul {
+  list-style: none;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+.sync-req-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sync-req-list li::before {
+  content: '✓';
+  color: #5DE0E6;
+  font-weight: bold;
+}
+
+/* FAQ / Known Issues Section */
+.sync-faq-section {
+  padding: 0 2rem 8rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sync-faq-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sync-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sync-faq-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sync-faq-card:hover {
+  border-color: #5DE0E6;
+}
+
+.sync-faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.sync-faq-header:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.sync-faq-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.sync-faq-card.expanded .sync-faq-toggle-btn {
+  color: #5DE0E6;
+}
+
+.sync-faq-content {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease forwards;
+}

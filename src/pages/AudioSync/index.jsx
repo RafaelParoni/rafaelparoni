@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { FaInstagram, FaGithub, FaWifi, FaLaptopCode, FaTerminal, FaPlayCircle, FaEyeSlash, FaBoxOpen, FaDownload, FaTools, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import '../ParoniDeck/ParoniDeck.css'; // Reusing the same style
+import './AudioSync.css'; // Reusing the same style
+import AudioSyncIcon from './assets/AudioSyncNoText.ico';
+import AudioSyncLogo from './assets/AudioSyncNoBG.png';
 
 const translations = {
   pt: {
@@ -218,6 +220,12 @@ export default function AudioSync() {
     const originalTitle = document.title;
     document.title = "Audio Sync";
 
+    const link = document.querySelector("link[rel~='icon']");
+    const originalHref = link ? link.href : '';
+    if (link) {
+      link.href = AudioSyncIcon;
+    }
+
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setTheme(savedTheme);
@@ -233,6 +241,9 @@ export default function AudioSync() {
 
     return () => {
       document.title = originalTitle;
+      if (link && originalHref) {
+        link.href = originalHref;
+      }
     };
   }, []);
 
@@ -269,28 +280,29 @@ export default function AudioSync() {
   const downloadLink = exeAsset ? exeAsset.browser_download_url : "https://github.com/RafaelParoni/AUDIO-SYNC/releases/latest";
 
   return (
-    <div className="paroni-deck-container">
+    <div className="paroni-sync-container">
       {/* NAVBAR */}
-      <nav className="deck-nav">
-        <div className="deck-nav-left">
-          <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Instagram">
+      <nav className="sync-nav">
+        <div className="sync-nav-left">
+          <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="sync-icon-btn" aria-label="Instagram">
             <FaInstagram size={24} />
           </a>
-          <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Github">
+          <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" className="sync-icon-btn" aria-label="Github">
             <FaGithub size={24} />
           </a>
         </div>
 
-        <div className="deck-nav-center">
-          <span className="deck-nav-brand">Audio Sync</span>
-          <Link to="/" className="deck-nav-subtitle">
+        <div className="sync-nav-center">
+          <img src={AudioSyncLogo} alt="Logo" style={{ width: '28px', height: '28px', marginRight: '8px' }} />
+          <span className="sync-nav-brand">Audio Sync</span>
+          <Link to="/" className="sync-nav-subtitle">
             by: Rafael Paroni
           </Link>
         </div>
 
-        <div className="deck-nav-right">
+        <div className="sync-nav-right">
           <select
-            className="deck-lang-select"
+            className="sync-lang-select"
             value={lang}
             onChange={handleLangChange}
             aria-label="Selecionar Idioma"
@@ -301,7 +313,7 @@ export default function AudioSync() {
           </select>
 
           <button
-            className="deck-icon-btn"
+            className="sync-icon-btn"
             onClick={toggleTheme}
             aria-label="Alternar Tema"
           >
@@ -311,20 +323,29 @@ export default function AudioSync() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="deck-hero animate-fade-in" style={{ paddingTop: '12rem', paddingBottom: '6rem' }}>
-        <h1 className="deck-title" style={{ background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>{t.heroTitle}</h1>
-        <p className="deck-subtitle">{t.heroSub}</p>
+      <section className="sync-hero animate-fade-in" style={{ paddingTop: '12rem', paddingBottom: '6rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginBottom: '1.5rem' }}>
+          <img 
+            src={AudioSyncLogo} 
+            alt="Audio Sync Logo" 
+            style={{ width: '90px', height: 'auto', filter: 'drop-shadow(0 4px 15px rgba(6, 182, 212, 0.5))' }} 
+          />
+          <h1 className="sync-title" style={{ background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', WebkitBackgroundClip: 'text', backgroundClip: 'text', margin: 0 }}>
+            {t.heroTitle}
+          </h1>
+        </div>
+        <p className="sync-subtitle">{t.heroSub}</p>
         
         <p style={{ maxWidth: '800px', margin: '0 auto 2rem', color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1.1rem' }}>
           {t.heroDesc}
         </p>
 
-        <div className="deck-btn-group" style={{ justifyContent: 'center' }}>
-          <a href="#download" className="deck-btn deck-btn-primary" style={{ background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', border: 'none' }}>
+        <div className="sync-btn-group" style={{ justifyContent: 'center' }}>
+          <a href="#download" className="sync-btn sync-btn-primary" style={{ background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', border: 'none' }}>
             <FaDownload />
             {t.downloadBtn}
           </a>
-          <a href="#recursos" className="deck-btn deck-btn-outline">
+          <a href="#recursos" className="sync-btn sync-btn-outline">
             <FaTools />
             {t.featuresBtn}
           </a>
@@ -332,8 +353,8 @@ export default function AudioSync() {
       </section>
 
       {/* FEATURES SECTION */}
-      <section id="recursos" className="deck-features">
-        <h2 className="deck-features-title">{t.featuresTitle}</h2>
+      <section id="recursos" className="sync-features">
+        <h2 className="sync-features-title">{t.featuresTitle}</h2>
         <div className="features-grid">
           {t.features.map((feature, idx) => (
             <div 
@@ -350,18 +371,18 @@ export default function AudioSync() {
           ))}
         </div>
 
-        <div className="deck-note" style={{ borderLeftColor: '#06B6D4' }}>
+        <div className="sync-note" style={{ borderLeftColor: '#06B6D4' }}>
           {t.note}
         </div>
       </section>
 
       {/* DOWNLOAD SECTION */}
-      <section id="download" className="deck-download-section">
-        <div className="deck-download-card">
+      <section id="download" className="sync-download-section">
+        <div className="sync-download-card">
           <h2>{t.downloadTitle}</h2>
           <p>{t.downloadDesc}</p>
           
-          <div className="deck-req-list" style={{ textAlign: 'left', background: 'var(--nav-bg)', padding: '2rem', borderRadius: '12px' }}>
+          <div className="sync-req-list" style={{ textAlign: 'left', background: 'var(--nav-bg)', padding: '2rem', borderRadius: '12px' }}>
             <h4 style={{ color: '#06B6D4', fontSize: '1.2rem', marginBottom: '1rem' }}>{t.reqTitle}</h4>
             <ul style={{ listStyleType: 'decimal', paddingLeft: '1.5rem', margin: 0, color: 'var(--text-secondary)' }}>
               {t.reqs.map((req, idx) => (
@@ -372,39 +393,39 @@ export default function AudioSync() {
 
           <br />
 
-          <a href={downloadLink} className="deck-btn deck-btn-primary" style={{ display: 'inline-flex', padding: '1rem 2.5rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', border: 'none' }}>
+          <a href={downloadLink} className="sync-btn sync-btn-primary" style={{ display: 'inline-flex', padding: '1rem 2.5rem', fontSize: '1.1rem', background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', border: 'none' }}>
             <FaDownload size={20} />
             {t.latestVersion}
           </a>
           
-          <span className="deck-version-info" style={{ display: 'block', marginTop: '1rem' }}>
+          <span className="sync-version-info" style={{ display: 'block', marginTop: '1rem' }}>
             {t.versionPrefix} {release?.tag_name || 'v1.1'} • Windows 10/11 • {release?.assets?.[0]?.size ? (release.assets[0].size / 1024 / 1024).toFixed(1) + ` ${t.mbText}` : `~20 ${t.mbText}`}
           </span>
         </div>
       </section>
 
       {/* FAQ SECTION */}
-      <section className="deck-faq-section">
-        <h2 className="deck-faq-title">{t.faqTitle}</h2>
-        <div className="deck-faq-list">
+      <section className="sync-faq-section">
+        <h2 className="sync-faq-title">{t.faqTitle}</h2>
+        <div className="sync-faq-list">
           {t.faqItems.map((item, idx) => {
             const isExpanded = expandedFaq === idx;
             return (
               <div 
                 key={idx} 
-                className={`deck-faq-card ${isExpanded ? 'expanded' : ''}`}
+                className={`sync-faq-card ${isExpanded ? 'expanded' : ''}`}
               >
                 <div 
-                  className="deck-faq-header" 
+                  className="sync-faq-header" 
                   onClick={() => setExpandedFaq(isExpanded ? null : idx)}
                 >
                   <h3 style={{ margin: 0, fontSize: '1.1rem' }}>{item.title}</h3>
-                  <button className="deck-faq-toggle-btn">
+                  <button className="sync-faq-toggle-btn">
                     {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
                   </button>
                 </div>
                 {isExpanded && (
-                  <div className="deck-faq-content">
+                  <div className="sync-faq-content">
                     <p>{item.desc}</p>
                   </div>
                 )}
