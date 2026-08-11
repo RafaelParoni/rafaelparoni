@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/', // Agora é raiz!
+  build: {
+    outDir: 'docs' // Força o Vite a compilar o site nesta pasta
+  }
 })
