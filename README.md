@@ -1,31 +1,67 @@
-# 🌟 Rafael Paroni - Portfólio Premium
+# Olá 👋, eu sou o Rafael Paroni
 
-Um portfólio moderno, responsivo e de alta performance construído com **React e Vite**. O projeto possui um design premium focado em *Glassmorphism*, paleta de cores harmoniosas e micro-interações que melhoram significativamente a experiência do usuário.
+<div align="center">
+  <a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=RafaelParoni&theme=dark&hide_border=true&locale=pt_BR&short_numbers=true" alt="GitHub Streak" /></a>
+</div>
 
-## 🚀 Funcionalidades
-
-- **Design Premium:** Interface moderna com tema escuro elegante, efeitos de brilho, hover e gradientes dinâmicos.
-- **Internacionalização (i18n):** Suporte nativo a 3 idiomas (Português, Inglês e Espanhol) de forma instantânea sem reload, com dados localizados.
-- **Totalmente Dinâmico:** Links sociais e contatos puxados através de um arquivo de configuração `.env`.
-- **Currículo Interativo:** Visualização de currículo em PDF diretamente na aplicação via um modal customizado sem a necessidade de baixar.
-- **Carrossel de Projetos:** Seção de trabalhos com categorização (Front-end, Back-end, etc) e crachás de destaque.
-- **Contato Rápido:** Grade de contatos interativa e opção de ler QR Code para iniciar uma conversa no WhatsApp diretamente.
-
-## 💻 Tecnologias Utilizadas
-
-- **React** (v18+)
-- **Vite** (Build Tool super rápida)
-- **CSS3 Vanilla** (Variáveis CSS, CSS Grid, Flexbox e animações)
-- **Lucide React** (Ícones modernos e leves)
-- **React Scroll** (Navegação suave entre seções)
-
-## 📁 Estrutura de Pastas
-
-- `/src/components` - Componentes reutilizáveis da interface (Hero, Navbar, Trabalhos, etc).
-- `/src/contexts` - Contextos globais (como o `LanguageContext.jsx` para tradução).
-- `/src/data` - Arquivos de configuração JSON contendo os textos do site (`translations.json`) e lista de projetos (`trabalhos.json`).
-- `/src/assets` - Imagens, ícones estáticos, QR Code e o arquivo em PDF do currículo.
-- `/src/index.css` - Estilos globais (Design System, animações e responsividade).
+### 🚀 Sobre Mim
+- 🎓 Estudante de **Ciência da Computação**.
+- 🇧🇷 Morando no Brasil.
+- 🛠️ Focado em **Desenvolvimento Web** e **Automações de Processos**.
+- 🤖 Desenvolvendo soluções inteligentes com **Python**, **n8n**, **IA** e **Javascript**.
 
 ---
-*Feito com foco em design e código limpo.*
+
+### 🛠️ Tecnologias e Ferramentas
+
+**Frontend & Mobile**
+<p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+</p>
+
+**Backend & Automation**
+<p align="left">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white" />
+  <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white" />
+</p>
+
+**Banco de Dados & Cloud**
+<p align="left">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+</p>
+
+---
+
+### 📂 Projetos em Destaque
+
+| Projeto | Descrição | Site | Repositório |
+| :--- | :--- | :--- | :--- |
+| **SaveMovie** | Catálogo pessoal de filmes. | [Site oficial](https://save-movie.vercel.app/) | Repositório |
+| **QrCustom** | Gerador de QR Codes personalizados. | [Site oficial](https://rafaelparoni.vercel.app/qr-custom) | [Repositório](https://github.com/RafaelParoni/portfolio/tree/main/src/pages/QrCustom) |
+| **Paroni Downloader** | Download de mídias de diversas plataformas. | [Site oficial](https://rafaelparoni.vercel.app/downloader) | [Repositório](https://github.com/RafaelParoni/Paroni-Downloader) |
+| **Paroni Deck** | Stream Deck virtual com controle via web | [Site oficial]() |  [Repositório](https://github.com/RafaelParoni/ParoniDeck)  |
+| **Fast Clip** | Aplicação web moderna e extremamente rápida para clipping e compartilhamento de vídeos. | [Site oficial](https://fast-clip.vercel.app/) |  [Repositório](https://github.com/RafaelParoni/FastClipParoni)  |
+
+---
+
+### 🌐 Conecte-se Comigo
+<div align="center">
+  <a href="https://rafaelparoni.vercel.app/">
+    <img src="https://img.shields.io/badge/Meu%20Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+</div>
+
+<br/>
+
+<div align="center">
+  <p>Escaneie para acessar meu portfólio:</p>
+  <img src='https://github.com/RafaelParoni/rafaelparoni/blob/main/QRCODE.png?raw=true' width="150px" />
+  <br/>
+  <sub>QR Code gerado com o <a href='https://rafaelparoni.vercel.app/qr-custom'>QrCustom</a></sub>
+</div>
