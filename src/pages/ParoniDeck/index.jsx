@@ -4,6 +4,7 @@ import { FaInstagram, FaGithub, FaVolumeUp, FaFolderOpen, FaLink, FaKeyboard, Fa
 import { Link } from 'react-router-dom';
 import DesktopImage from './assets/Desktop.png';
 import MobileImage from './assets/Mobile.png';
+import ParoniDeckIcon from './assets/favIcon.ico';
 import './ParoniDeck.css';
 
 const translations = {
@@ -210,6 +211,12 @@ export default function ParoniDeck() {
     const originalTitle = document.title;
     document.title = "Paroni Deck";
 
+    const link = document.querySelector("link[rel~='icon']");
+    const originalHref = link ? link.href : '';
+    if (link) {
+      link.href = ParoniDeckIcon;
+    }
+
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setTheme(savedTheme);
@@ -225,6 +232,9 @@ export default function ParoniDeck() {
 
     return () => {
       document.title = originalTitle;
+      if (link && originalHref) {
+        link.href = originalHref;
+      }
     };
   }, []);
 
