@@ -5,7 +5,4 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/', // Como é o principal, a base continua sendo /
-  build: {
-    outDir: 'docs' // Avisa o Vite para jogar os arquivos prontos aqui
-  }
 })
