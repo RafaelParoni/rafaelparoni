@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Agora é raiz!
+  base: '/', // Como é o principal, a base continua sendo /
   build: {
-    outDir: 'docs' // Força o Vite a compilar o site nesta pasta
+    outDir: 'docs' // Avisa o Vite para jogar os arquivos prontos aqui
   }
 })
