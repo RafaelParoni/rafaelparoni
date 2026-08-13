@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ExternalLink, FileText, MessageCircle, Briefcase } from 'lucide-react';
 import { Link } from 'react-scroll';
 import { useLanguage } from '../contexts/LanguageContext';
+import rafaelParoniImg from '../assets/rafaelparoni.png';
 
 const GithubIcon = ({ size }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -145,7 +146,7 @@ export default function Hero({ onOpenResume }) {
 
         <div className="hero-image-container">
           <img
-            src="/aboutImg.png"
+            src={rafaelParoniImg}
             alt="Rafael Paroni"
             className="hero-image"
           />
