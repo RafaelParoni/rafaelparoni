@@ -315,7 +315,7 @@ export default function AudioSync() {
             <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
               AudioSync
             </h2>
-            <a className="navbar-subtitle" href='https://github.com/rafaelparoni' target='_blank' rel='noopener noreferrer' >By: Rafael Paroni</a>
+            <a className="navbar-subtitle" href='/' target='_blank' rel='noopener noreferrer' >By: Rafael Paroni</a>
             <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Instagram">
               <FaInstagram size={24} />
             </a>
