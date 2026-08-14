@@ -1,3 +1,13 @@
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 /* NAVBAR 100% ISOLADA PARA O PARONI DECK */
 .sync-nav {
   position: fixed;
@@ -34,7 +44,7 @@
 .sync-nav-brand {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--text-color);
 }
 
 .sync-nav-subtitle {
@@ -42,7 +52,7 @@
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  background: var(--gradient-brand);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -59,7 +69,7 @@
 .sync-icon-btn {
   background: transparent;
   border: none;
-  color: var(--text-primary);
+  color: var(--text-color);
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 50%;
@@ -76,7 +86,7 @@
 
 .sync-lang-select {
   background: transparent;
-  color: var(--text-primary);
+  color: var(--text-color);
   border: 1px solid var(--border-color);
   padding: 0.5rem;
   border-radius: 8px;
@@ -88,12 +98,12 @@
 }
 
 .sync-lang-select:hover {
-  border-color: var(--text-secondary);
+  border-color: var(--text-muted);
 }
 
 .sync-lang-select option {
   background: var(--bg-color);
-  color: var(--text-primary);
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {
@@ -126,7 +136,7 @@
   font-size: 4rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  background: var(--gradient-brand);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -135,7 +145,7 @@
 
 .sync-subtitle {
   font-size: 1.25rem;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   max-width: 800px;
   line-height: 1.6;
   margin-bottom: 2.5rem;
@@ -161,7 +171,7 @@
   left: 2px;
   width: 56px;
   height: 34px;
-  background: var(--gradient-brand);
+  background: var(--primary-gradient);
   border-radius: 17px;
   transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
@@ -176,7 +186,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   transition: color 0.3s ease;
 }
 
@@ -265,7 +275,7 @@
 }
 
 .feature-card p {
-  color: var(--text-secondary);
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
@@ -393,7 +403,7 @@
 }
 
 .sync-btn-primary {
-  background: var(--gradient-brand);
+  background: var(--primary-gradient);
   color: #fff;
   border: none;
   box-shadow: 0 4px 15px rgba(93, 224, 230, 0.3);
@@ -407,7 +417,7 @@
 
 .sync-btn-outline {
   background: transparent;
-  color: var(--text-primary);
+  color: var(--text-color);
   border: 1px solid var(--border-color);
 }
 
@@ -438,7 +448,7 @@
 }
 
 .sync-download-card p {
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -447,7 +457,7 @@
   display: block;
   margin-top: 1.5rem;
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -464,13 +474,13 @@
 
 .sync-req-list h4 {
   margin-bottom: 1rem;
-  color: var(--text-primary);
+  color: var(--text-color);
 }
 
 .sync-req-list ul {
   list-style: none;
   padding: 0;
-  color: var(--text-secondary);
+  color: var(--text-muted);
 }
 
 .sync-req-list li {
@@ -535,7 +545,7 @@
 .sync-faq-toggle-btn {
   background: transparent;
   border: none;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -549,7 +559,7 @@
 
 .sync-faq-content {
   padding: 0 1.5rem 1.5rem;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   line-height: 1.6;
   animation: fadeIn 0.3s ease forwards;
 }

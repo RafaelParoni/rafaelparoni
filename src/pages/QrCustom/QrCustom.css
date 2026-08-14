@@ -1,39 +1,5 @@
-:root {
-  --bg-color: #f8fafc;
-  --surface-color: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(0, 0, 0, 0.1);
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --gradient-brand: linear-gradient(90deg, rgba(93, 224, 230, 1) 0%, rgba(0, 74, 173, 1) 100%);
-  --nav-bg: rgba(255, 255, 255, 0.8);
-}
-
-[data-theme='dark'] {
-  --bg-color: #0f172a;
-  --surface-color: rgba(30, 41, 59, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --nav-bg: rgba(15, 23, 42, 0.8);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Outfit', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
 .gradient-text {
-  background: var(--gradient-brand);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -53,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+   background: radial-gradient(circle at 50% -20%, rgba(93, 224, 230, 0.15), transparent 60%);
 }
 
 .main-content {
@@ -96,9 +63,9 @@ body {
 .navbar-qr-brand {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-color);
 }
-/* White text for QR Custom as requested: "QR Custom (branco)" - But in light theme white might be invisible. I'll make it var(--text-primary) which is white in dark and black in light, or force it white if the user specifically asked for white. The prompt says: "QR Custom (branco)". So I should make it white or #fff, maybe adding a shadow in light mode, or maybe the navbar is dark? Let's check: "QR Custom" (branco). I'll add a class for it. */
+/* White text for QR Custom as requested: "QR Custom (branco)" - But in light theme white might be invisible. I'll make it var(--text-color) which is white in dark and black in light, or force it white if the user specifically asked for white. The prompt says: "QR Custom (branco)". So I should make it white or #fff, maybe adding a shadow in light mode, or maybe the navbar is dark? Let's check: "QR Custom" (branco). I'll add a class for it. */
 .text-white-forced {
   color: #ffffff !important;
 }
@@ -119,7 +86,7 @@ body {
 .icon-btn {
   background: transparent;
   border: none;
-  color: var(--text-primary);
+  color: var(--text-color);
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 50%;
@@ -136,7 +103,7 @@ body {
 
 .lang-select {
   background: transparent;
-  color: var(--text-primary);
+  color: var(--text-color);
   border: 1px solid var(--border-color);
   padding: 0.5rem;
   border-radius: 8px;
@@ -148,12 +115,12 @@ body {
 }
 
 .lang-select:hover {
-  border-color: var(--text-secondary);
+  border-color: var(--text-muted);
 }
 
 .lang-select option {
   background: var(--bg-color);
-  color: var(--text-primary);
+  color: var(--text-color);
 }
 
 /* Animations */
@@ -176,7 +143,7 @@ body {
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -274,12 +241,12 @@ body {
 .form-group label {
   font-weight: 600;
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  color: var(--text-muted);
 }
 
 .styled-input {
   background: var(--bg-color);
-  color: var(--text-primary);
+  color: var(--text-color);
   border: 1px solid var(--border-color);
   padding: 0.8rem 1rem;
   border-radius: 10px;
@@ -315,7 +282,7 @@ textarea.styled-input {
 
 .btn-secondary {
   background: rgba(93, 224, 230, 0.1);
-  color: var(--text-primary);
+  color: var(--text-color);
   border: 1px solid #5DE0E6;
   padding: 0.8rem 1.5rem;
   border-radius: 10px;
