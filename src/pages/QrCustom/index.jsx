@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
+
 import { FaInstagram, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+
+
 import QRCodeGenerator from './components/QRCodeGenerator';
 import qrCustomFavicon from './assets/QrCustomIcon.ico';
-import qrCustomLogo from './assets/QrCustomIcon.png';
+
 import './QrCustom.css';
 
 const translations = {
@@ -23,6 +26,7 @@ const translations = {
     heroSub: "Crea y gestiona tus Códigos QR de forma rápida y personalizada.",
     getStarted: "Empezar Ahora"
   }
+
 };
 
 function QrCustom() {
@@ -50,7 +54,7 @@ function QrCustom() {
   useEffect(() => {
     const favicon = document.querySelector("link[rel~='icon']");
     const originalHref = favicon ? favicon.href : '/favicon.ico';
-    
+
     if (favicon) {
       favicon.href = qrCustomFavicon;
     } else {
@@ -97,47 +101,66 @@ function QrCustom() {
 
   const t = translations[lang];
 
+  const navLinks = [
+
+  ];
+
   return (
     <div className="app-container">
-      <nav className="navbar-qr">
-        <div className="navbar-qr-left" style={{ display: 'flex', gap: '1rem' }}>
-          <a href={import.meta.env.VITE_INSTAGRAM} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="Instagram">
-            <FaInstagram size={24} />
-          </a>
-          <a href={import.meta.env.VITE_GITHUB_LINK} target="_blank" rel="noopener noreferrer" className="icon-btn" aria-label="Github">
-            <FaGithub size={24} />
-          </a>
+      <>
+        <div className="mobile-brand">
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
+            Qr Custom
+          </h2>
         </div>
 
-        <div className="navbar-qr-center">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <img src={qrCustomLogo} alt="Logo QR Custom" style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
-            <span className="navbar-qr-brand text-white-forced" style={{ margin: 0 }}>QR Custom</span>
+        <nav className="navbar">
+          <div className="nav-brand">
+           
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
+              Qr Custom
+            </h2>
+            <a className="navbar-subtitle" href='https://github.com/rafaelparoni' target='_blank' rel='noopener noreferrer' >By: Rafael Paroni</a>
+            <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Instagram">
+              <FaInstagram size={24} />
+            </a>
+            <a href={import.meta.env.VITE_QRCUSTOM_GITHUB} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Github">
+              <FaGithub size={24} />
+            </a>
           </div>
-          <Link to="/" className="navbar-qr-subtitle gradient-text" style={{ textDecoration: 'none', cursor: 'pointer' }}>By: Rafael Paroni</Link>
-        </div>
 
-        <div className="navbar-qr-right">
-          <select
-            className="lang-select"
-            value={lang}
-            onChange={handleLangChange}
-            aria-label="Selecionar Idioma"
-          >
-            <option value="pt">PT</option>
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
+          <div className="nav-links">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="nav-link"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
 
-          <button
-            className="icon-btn"
-            onClick={toggleTheme}
-            aria-label="Alternar Tema"
-          >
-            {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-          </button>
-        </div>
-      </nav>
+          <div className="nav-controls">
+            <select
+              className="lang-select"
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+            >
+              <option value="pt">PT</option>
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+            </select>
+
+            <button onClick={toggleTheme} className="icon-button" aria-label="Toggle Theme">
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+          </div>
+        </nav>
+      </>
 
       <main className="main-content">
         <QRCodeGenerator lang={lang} />

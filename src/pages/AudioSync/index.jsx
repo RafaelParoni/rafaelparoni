@@ -12,6 +12,8 @@ const translations = {
     heroSub: "Espelhe o áudio do seu computador em tempo real para outra máquina na rede local.",
     heroDesc: "O AudioSync é um software criado para espelhar, em tempo real e com baixíssima latência (via UDP), todo o áudio do seu computador (como um Notebook) diretamente para as caixas de som de outro computador (como um PC Desktop) na mesma rede local. Utiliza a biblioteca pyaudiowpatch integrada à API nativa WASAPI do Windows.",
     featuresTitle: "🌟 Funcionalidades",
+    navDownload: "Download",
+    navFeatures: "Recursos",
     features: [
       {
         icon: <FaWifi />,
@@ -68,7 +70,7 @@ const translations = {
       },
       {
         title: "Windows Defender bloqueando a instalação?",
-        desc: <>O Windows Defender pode exibir um alerta de segurança (SmartScreen) ao abrir ou instalar o programa porque ele não possui uma assinatura digital paga. O programa é 100% seguro (antivírus de terceiros como o Kaspersky não o bloqueiam) e de código aberto, permitindo que qualquer pessoa <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" style={{color: '#06B6D4', textDecoration: 'underline'}}>verifique o código fonte</a>. Basta clicar em 'Mais informações' e depois em 'Executar assim mesmo'.</>
+        desc: <>O Windows Defender pode exibir um alerta de segurança (SmartScreen) ao abrir ou instalar o programa porque ele não possui uma assinatura digital paga. O programa é 100% seguro (antivírus de terceiros como o Kaspersky não o bloqueiam) e de código aberto, permitindo que qualquer pessoa <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" style={{ color: '#06B6D4', textDecoration: 'underline' }}>verifique o código fonte</a>. Basta clicar em 'Mais informações' e depois em 'Executar assim mesmo'.</>
       }
     ]
   },
@@ -77,6 +79,8 @@ const translations = {
     heroSub: "Mirror your computer's audio in real-time to another machine on your local network.",
     heroDesc: "AudioSync is a software created to mirror, in real-time and with ultra-low latency (via UDP), all the audio from your computer (like a Laptop) directly to the speakers of another computer (like a Desktop PC) on the same local network. It uses the pyaudiowpatch library integrated with the native Windows WASAPI.",
     featuresTitle: "🌟 Features",
+    navDownload: "Download",
+    navFeatures: "Features",
     features: [
       {
         icon: <FaWifi />,
@@ -133,7 +137,7 @@ const translations = {
       },
       {
         title: "Windows Defender blocking the installation?",
-        desc: <>Windows Defender might show a security alert (SmartScreen) when opening or installing the program because it does not have a paid digital signature. The software is 100% safe (third-party antiviruses like Kaspersky don't block it) and open-source, allowing anyone to <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" style={{color: '#06B6D4', textDecoration: 'underline'}}>verify the source code</a>. Just click on 'More info' and then 'Run anyway'.</>
+        desc: <>Windows Defender might show a security alert (SmartScreen) when opening or installing the program because it does not have a paid digital signature. The software is 100% safe (third-party antiviruses like Kaspersky don't block it) and open-source, allowing anyone to <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" style={{ color: '#06B6D4', textDecoration: 'underline' }}>verify the source code</a>. Just click on 'More info' and then 'Run anyway'.</>
       }
     ]
   },
@@ -142,6 +146,8 @@ const translations = {
     heroSub: "Refleja el audio de tu computadora en tiempo real a otra máquina en tu red local.",
     heroDesc: "AudioSync es un software creado para reflejar, en tiempo real y con latencia ultrabaja (vía UDP), todo el audio de tu computadora (como una Laptop) directamente a los altavoces de otra computadora (como una PC de Escritorio) en la misma red local. Utiliza la biblioteca pyaudiowpatch integrada con la API nativa WASAPI de Windows.",
     featuresTitle: "🌟 Características",
+    navDownload: "Download",
+    navFeatures: "Características",
     features: [
       {
         icon: <FaWifi />,
@@ -198,7 +204,7 @@ const translations = {
       },
       {
         title: "¿Windows Defender bloqueando la instalación?",
-        desc: <>Windows Defender podría mostrar una alerta de seguridad (SmartScreen) al abrir o instalar el programa debido a que no tiene una firma digital de pago. El software es 100% seguro (antivirus de terceros como Kaspersky no lo bloquean) y de código abierto, permitiendo que cualquiera pueda <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" style={{color: '#06B6D4', textDecoration: 'underline'}}>verificar el código fuente</a>. Simplemente haz clic en 'Más información' y luego en 'Ejecutar de todas formas'.</>
+        desc: <>Windows Defender podría mostrar una alerta de seguridad (SmartScreen) al abrir o instalar el programa debido a que no tiene una firma digital de pago. El software es 100% seguro (antivirus de terceros como Kaspersky no lo bloquean) y de código abierto, permitiendo que cualquiera pueda <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" style={{ color: '#06B6D4', textDecoration: 'underline' }}>verificar el código fuente</a>. Simplemente haz clic en 'Más información' y luego en 'Ejecutar de todas formas'.</>
       }
     ]
   }
@@ -292,63 +298,71 @@ export default function AudioSync() {
   const exeAsset = release?.assets?.find(asset => asset.name.endsWith('.exe'));
   const downloadLink = exeAsset ? exeAsset.browser_download_url : "https://github.com/RafaelParoni/AUDIO-SYNC/releases/latest";
 
+
   return (
     <div className="paroni-sync-container">
       {/* NAVBAR */}
-      <nav className="sync-nav">
-        <div className="sync-nav-left">
-          <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="sync-icon-btn" aria-label="Instagram">
-            <FaInstagram size={24} />
-          </a>
-          <a href="https://github.com/RafaelParoni/AUDIO-SYNC" target="_blank" rel="noopener noreferrer" className="sync-icon-btn" aria-label="Github">
-            <FaGithub size={24} />
-          </a>
+      <>
+        <div className="mobile-brand">
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
+            AudioSync
+          </h2>
         </div>
 
-        <div className="sync-nav-center">
-          <img src={AudioSyncLogo} alt="Logo" style={{ width: '28px', height: '28px', marginRight: '8px' }} />
-          <span className="sync-nav-brand">Audio Sync</span>
-          <Link to="/" className="sync-nav-subtitle">
-            by: Rafael Paroni
-          </Link>
-        </div>
+        <nav className="navbar">
+          <div className="nav-brand">
 
-        <div className="sync-nav-right">
-          <select
-            className="sync-lang-select"
-            value={lang}
-            onChange={handleLangChange}
-            aria-label="Selecionar Idioma"
-          >
-            <option value="pt">PT</option>
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
+              AudioSync
+            </h2>
+            <a className="navbar-subtitle" href='https://github.com/rafaelparoni' target='_blank' rel='noopener noreferrer' >By: Rafael Paroni</a>
+            <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Instagram">
+              <FaInstagram size={24} />
+            </a>
+            <a href={import.meta.env.VITE_AUDIOSYNC_GITHUB} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Github">
+              <FaGithub size={24} />
+            </a>
+          </div>
 
-          <button
-            className="sync-icon-btn"
-            onClick={toggleTheme}
-            aria-label="Alternar Tema"
-          >
-            {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-          </button>
-        </div>
-      </nav>
+
+          <div className="nav-links">
+            <a href="#download" className="nav-link">{t.navDownload}</a>
+            <a href="#recursos" className="nav-link">{t.navFeatures}</a>
+          </div>
+
+
+          <div className="nav-controls">
+            <select
+              className="lang-select"
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+            >
+              <option value="pt">PT</option>
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+            </select>
+
+            <button onClick={toggleTheme} className="icon-button" aria-label="Toggle Theme">
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+          </div>
+        </nav>
+      </>
 
       {/* HERO SECTION */}
       <section className="sync-hero animate-fade-in" style={{ paddingTop: '12rem', paddingBottom: '6rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginBottom: '1.5rem' }}>
-          <img 
-            src={AudioSyncLogo} 
-            alt="Audio Sync Logo" 
-            style={{ width: '90px', height: 'auto', filter: 'drop-shadow(0 4px 15px rgba(6, 182, 212, 0.5))' }} 
+          <img
+            src={AudioSyncLogo}
+            alt="Audio Sync Logo"
+            style={{ width: '90px', height: 'auto', filter: 'drop-shadow(0 4px 15px rgba(6, 182, 212, 0.5))' }}
           />
           <h1 className="sync-title" style={{ background: 'linear-gradient(135deg, #06B6D4, #3B82F6)', WebkitBackgroundClip: 'text', backgroundClip: 'text', margin: 0 }}>
             {t.heroTitle}
           </h1>
         </div>
         <p className="sync-subtitle">{t.heroSub}</p>
-        
+
         <p style={{ maxWidth: '800px', margin: '0 auto 2rem', color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1.1rem' }}>
           {t.heroDesc}
         </p>
@@ -377,9 +391,9 @@ export default function AudioSync() {
         <h2 className="sync-features-title">{t.featuresTitle}</h2>
         <div className="features-grid">
           {t.features.map((feature, idx) => (
-            <div 
-              key={idx} 
-              className="feature-card" 
+            <div
+              key={idx}
+              className="feature-card"
               style={{ '--feature-color': featureColors[idx] }}
             >
               <div className="feature-icon" style={{ color: featureColors[idx] }}>
@@ -401,7 +415,7 @@ export default function AudioSync() {
         <div className="sync-download-card">
           <h2>{t.downloadTitle}</h2>
           <p>{t.downloadDesc}</p>
-          
+
           <div className="sync-req-list" style={{ textAlign: 'left', background: 'var(--nav-bg)', padding: '2rem', borderRadius: '12px' }}>
             <h4 style={{ color: '#06B6D4', fontSize: '1.2rem', marginBottom: '1rem' }}>{t.reqTitle}</h4>
             <ul style={{ listStyleType: 'decimal', paddingLeft: '1.5rem', margin: 0, color: 'var(--text-secondary)' }}>
@@ -430,7 +444,7 @@ export default function AudioSync() {
               {t.latestVersion}
             </a>
           )}
-          
+
           <span className="sync-version-info" style={{ display: 'block', marginTop: '1rem' }}>
             {t.versionPrefix} {release?.tag_name || 'v1.1'} • Windows 10/11 • {release?.assets?.[0]?.size ? (release.assets[0].size / 1024 / 1024).toFixed(1) + ` ${t.mbText}` : `~20 ${t.mbText}`}
           </span>
@@ -444,12 +458,12 @@ export default function AudioSync() {
           {t.faqItems.map((item, idx) => {
             const isExpanded = expandedFaq === idx;
             return (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`sync-faq-card ${isExpanded ? 'expanded' : ''}`}
               >
-                <div 
-                  className="sync-faq-header" 
+                <div
+                  className="sync-faq-header"
                   onClick={() => setExpandedFaq(isExpanded ? null : idx)}
                 >
                   <h3 style={{ margin: 0, fontSize: '1.1rem' }}>{item.title}</h3>

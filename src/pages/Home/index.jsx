@@ -10,13 +10,13 @@ import './Home.css';
 function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
-  const githubLink = import.meta.env.VITE_GITHUB_LINK || 'https://github.com/RafaelParoni';
-  const instagramUser = import.meta.env.VITE_INSTAGRAM || 'rafaeparroni';
-  const linkedin = import.meta.env.VITE_LINKEDIN || 'rafael-paroni-43961a301';
+  const githubLink = import.meta.env.VITE_GITHUB_LINK ;
+  const instagramUser = import.meta.env.VITE_INSTAGRAM 
+  const linkedin = import.meta.env.VITE_LINKEDIN ;
   const instagramLink = `https://instagram.com/${instagramUser}`;
-  const email = import.meta.env.VITE_EMAIL || 'rafaelparonisilvaa@gmail.com';
+  const email = import.meta.env.VITE_EMAIL ;
   
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '5512982087099';
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
   const whatsappDisplay = whatsappNumber.replace(/^55/, '').replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
 
   return (

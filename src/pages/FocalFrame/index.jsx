@@ -1,11 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  FaUpload, FaCamera, FaDownload, FaTimes, FaHome, 
+import {
+  FaUpload, FaCamera, FaDownload, FaTimes,
   FaGithub, FaInstagram, FaSpinner, FaInfoCircle,
-  FaPlay, FaPause, FaVolumeUp, FaVolumeMute,
-  FaSun, FaMoon
+  FaPlay, FaPause, FaVolumeUp, FaVolumeMute
 } from 'react-icons/fa';
+
+import { Moon, Sun } from 'lucide-react';
+
 import './FocalFrame.css';
 import translations from './data/translations.json';
 
@@ -19,7 +21,7 @@ export default function FocalFrame() {
   const [videoSrc, setVideoSrc] = useState(null);
   const [capturedFrames, setCapturedFrames] = useState([]);
   const [videoName, setVideoName] = useState('');
-  
+
   // Timeline and Player states
   const [thumbnails, setThumbnails] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -28,7 +30,7 @@ export default function FocalFrame() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1); // 0.0 to 1.0
   const [isMuted, setIsMuted] = useState(false);
-  
+
   // Theme and Language
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const [lang, setLang] = useState(localStorage.getItem('lang') || 'pt');
@@ -59,13 +61,13 @@ export default function FocalFrame() {
     setIsGenerating(true);
     const video = document.createElement('video');
     video.src = url;
-    video.crossOrigin = 'anonymous'; 
+    video.crossOrigin = 'anonymous';
     video.muted = true;
 
     video.addEventListener('loadedmetadata', async () => {
       const vidDuration = video.duration;
       setDuration(vidDuration);
-      
+
       const thumbCount = 10;
       const interval = vidDuration / thumbCount;
       const generated = [];
@@ -123,7 +125,7 @@ export default function FocalFrame() {
       const newMutedState = !isMuted;
       videoRef.current.muted = newMutedState;
       setIsMuted(newMutedState);
-      
+
       if (newMutedState) {
         setVolume(0);
       } else {
@@ -145,16 +147,16 @@ export default function FocalFrame() {
   const handleCapture = () => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
-    
+
     if (video && canvas) {
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
-      
+
       const ctx = canvas.getContext('2d');
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      
+
       const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
-      
+
       setCapturedFrames(prev => [...prev, {
         id: Date.now(),
         url: dataUrl,
@@ -204,7 +206,7 @@ export default function FocalFrame() {
       videoRef.current.currentTime = newTime;
     }
   };
-  
+
   useEffect(() => {
     return () => {
       if (videoSrc) {
@@ -264,36 +266,67 @@ export default function FocalFrame() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   });
 
+
+  const navLinks = [
+
+  ];
+
   return (
     <div className="ic-page">
-      <nav className="navbar-ff">
-        <div className="navbar-ff-left">
-          <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="icon-btn" title="Instagram">
-            <FaInstagram size={24} />
-          </a>
-          <a href={githubLink} target="_blank" rel="noopener noreferrer" className="icon-btn" title="GitHub">
-            <FaGithub size={24} />
-          </a>
+      <>
+        <div className="mobile-brand">
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
+            Focal Frame
+          </h2>
         </div>
-        
-        <div className="navbar-ff-center">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span className="navbar-ff-brand">FocalFrame</span>
+
+        <nav className="navbar">
+          <div className="nav-brand">
+
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
+              Focal Frame
+            </h2>
+            <a className="navbar-subtitle" href='https://github.com/rafaelparoni' target='_blank' rel='noopener noreferrer' >By: Rafael Paroni</a>
+            <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Instagram">
+              <FaInstagram size={24} />
+            </a>
+            <a href={import.meta.env.VITE_FOCALFRAME_GITHUB} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Github">
+              <FaGithub size={24} />
+            </a>
           </div>
-          <Link to="/" className="navbar-ff-subtitle gradient-text">By: Rafael Paroni</Link>
-        </div>
-        
-        <div className="navbar-ff-right">
-          <select value={lang} onChange={handleLangChange} className="lang-select" title={t.langTitle}>
-            <option value="pt">PT</option>
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
-          <button onClick={toggleTheme} className="icon-btn" title={t.themeTitle}>
-            {theme === 'light' ? <FaMoon size={24} /> : <FaSun size={24} />}
-          </button>
-        </div>
-      </nav>
+
+          <div className="nav-links">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="nav-link"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          <div className="nav-controls">
+            <select
+              className="lang-select"
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+            >
+              <option value="pt">PT</option>
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+            </select>
+
+            <button onClick={toggleTheme} className="icon-button" aria-label="Toggle Theme">
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+          </div>
+        </nav>
+      </>
 
       <div className="ic-content">
         {!videoSrc ? (
@@ -302,12 +335,12 @@ export default function FocalFrame() {
               <h2>{t.welcomeHeadline}</h2>
               <p dangerouslySetInnerHTML={{ __html: t.welcomeDesc }}></p>
             </div>
-            
+
             <div className="ic-upload-box">
-              <input 
-                type="file" 
-                id="video-upload" 
-                accept="video/*" 
+              <input
+                type="file"
+                id="video-upload"
+                accept="video/*"
                 onChange={handleFileChange}
                 className="ic-hidden-input"
               />
@@ -342,9 +375,9 @@ export default function FocalFrame() {
 
             <div className="ic-video-section">
               <div className="ic-video-player-container" onClick={togglePlay}>
-                <video 
-                  ref={videoRef} 
-                  src={videoSrc} 
+                <video
+                  ref={videoRef}
+                  src={videoSrc}
                   className="ic-video-player-compact"
                   onTimeUpdate={handleTimeUpdate}
                   onEnded={handleVideoEnded}
@@ -354,7 +387,7 @@ export default function FocalFrame() {
 
               {/* Custom Controls & Timeline Editor */}
               <div className="ic-editor-panel">
-                
+
                 {/* Timeline Visualizer */}
                 <div className="ic-timeline-container">
                   {isGenerating ? (
@@ -369,13 +402,13 @@ export default function FocalFrame() {
                           <div key={i} className="ic-thumb-item" style={{ backgroundImage: `url(${thumb})` }}></div>
                         ))}
                       </div>
-                      <input 
-                        type="range" 
-                        className="ic-timeline-scrubber" 
-                        min="0" 
-                        max={duration || 100} 
-                        step="0.01" 
-                        value={currentTime} 
+                      <input
+                        type="range"
+                        className="ic-timeline-scrubber"
+                        min="0"
+                        max={duration || 100}
+                        step="0.01"
+                        value={currentTime}
                         onChange={handleScrubberChange}
                       />
                     </>
@@ -392,7 +425,7 @@ export default function FocalFrame() {
                       {formatTime(currentTime)} / {formatTime(duration)}
                     </span>
                   </div>
-                  
+
                   <div className="ic-action-group">
                     <button className="ic-btn ic-btn-primary" onClick={handleCapture}>
                       <FaCamera size={18} /> {t.capture}
@@ -403,11 +436,11 @@ export default function FocalFrame() {
                     <button className="ic-control-btn" onClick={toggleMute}>
                       {isMuted || volume === 0 ? <FaVolumeMute size={20} /> : <FaVolumeUp size={20} />}
                     </button>
-                    <input 
-                      type="range" 
-                      className="ic-volume-slider" 
-                      min="0" 
-                      max="1" 
+                    <input
+                      type="range"
+                      className="ic-volume-slider"
+                      min="0"
+                      max="1"
                       step="0.05"
                       value={volume}
                       onChange={handleVolumeChange}
@@ -431,8 +464,8 @@ export default function FocalFrame() {
                           <FaTimes size={16} />
                         </button>
                       </div>
-                      <button 
-                        className="ic-btn ic-btn-success ic-download-btn-small" 
+                      <button
+                        className="ic-btn ic-btn-success ic-download-btn-small"
                         onClick={() => handleDownload(frame.url, frame.rawTime)}
                       >
                         <FaDownload size={16} /> {t.download}
@@ -442,7 +475,7 @@ export default function FocalFrame() {
                 </div>
               </div>
             )}
-            
+
             <canvas ref={canvasRef} style={{ display: 'none' }} />
           </div>
         )}

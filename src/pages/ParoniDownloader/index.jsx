@@ -154,6 +154,7 @@ const ParoniDownloaderContent = () => {
               <p className="greeting text-gradient">{t('hero.presenting')}</p>
               <h1 className="title" style={{ fontSize: '3.5rem' }}>Paroni Downloader</h1>
               
+              
               <h3 className="subtitle">
                 {t('hero.subtitle')} <span className="typewriter-text text-gradient">{t('hero.typewriter')}</span>
               </h3>

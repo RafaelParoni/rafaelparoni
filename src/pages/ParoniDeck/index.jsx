@@ -279,53 +279,73 @@ export default function ParoniDeck() {
     }, 300); // 300ms igual a duração do fadeOut no CSS
   };
 
+  const navLinks = [
+
+  ];
+
   return (
     <div className="paroni-deck-container">
       {/* NAVBAR: 100% isolada para ParoniDeck */}
-      <nav className="deck-nav">
-        <div className="deck-nav-left">
-          <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Instagram">
-            <FaInstagram size={24} />
-          </a>
-          <a href={import.meta.env.VITE_PARONIDECK_GITHUB} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Github">
-            <FaGithub size={24} />
-          </a>
+      <>
+        <div className="mobile-brand">
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
+            Paroni Deck
+          </h2>
         </div>
 
-        <div className="deck-nav-center">
-          <span className="deck-nav-brand">Paroni Deck</span>
-          <Link to="/" className="deck-nav-subtitle">
-            by: Rafael Paroni
-          </Link>
-        </div>
+        <nav className="navbar">
+          <div className="nav-brand">
+          
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0, letterSpacing: '-0.5px' }}>
+              Paroni Deck
+            </h2>
+            <a className="navbar-subtitle" href='https://github.com/rafaelparoni' target='_blank' rel='noopener noreferrer' >By: Rafael Paroni</a>
+            <a href={`https://www.instagram.com/${import.meta.env.VITE_INSTAGRAM}`} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Instagram">
+              <FaInstagram size={24} />
+            </a>
+            <a href={import.meta.env.VITE_PARONIDECK_GITHUB} target="_blank" rel="noopener noreferrer" className="deck-icon-btn" aria-label="Github">
+              <FaGithub size={24} />
+            </a>
+          </div>
 
-        <div className="deck-nav-right">
-          <select
-            className="deck-lang-select"
-            value={lang}
-            onChange={handleLangChange}
-            aria-label="Selecionar Idioma"
-          >
-            <option value="pt">PT</option>
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
+          <div className="nav-links">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="nav-link"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
 
-          <button
-            className="deck-icon-btn"
-            onClick={toggleTheme}
-            aria-label="Alternar Tema"
-          >
-            {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
-          </button>
-        </div>
-      </nav>
+          <div className="nav-controls">
+            <select
+              className="lang-select"
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+            >
+              <option value="pt">PT</option>
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+            </select>
+
+            <button onClick={toggleTheme} className="icon-button" aria-label="Toggle Theme">
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+          </div>
+        </nav>
+      </>
 
       {/* HERO SECTION */}
       <section className="deck-hero animate-fade-in">
         <h1 className="deck-title">{t.heroTitle}</h1>
         <p className="deck-subtitle">{t.heroSub}</p>
-        
+
         <p style={{ maxWidth: '700px', margin: '0 auto 2rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
           {t.heroDesc}
         </p>
@@ -365,9 +385,9 @@ export default function ParoniDeck() {
         <h2 className="deck-features-title">{t.featuresTitle}</h2>
         <div className="features-grid">
           {t.features.map((feature, idx) => (
-            <div 
-              key={idx} 
-              className="feature-card" 
+            <div
+              key={idx}
+              className="feature-card"
               style={{ '--feature-color': featureColors[idx] }}
             >
               <div className="feature-icon" style={{ color: featureColors[idx] }}>
@@ -389,7 +409,7 @@ export default function ParoniDeck() {
         <div className="deck-download-card">
           <h2>{t.downloadTitle}</h2>
           <p>{t.downloadDesc}</p>
-          
+
           <div className="deck-req-list">
             <h4>{t.reqTitle}</h4>
             <ul>
@@ -405,7 +425,7 @@ export default function ParoniDeck() {
             <FaDownload size={20} />
             {t.latestVersion}
           </a>
-          
+
           <span className="deck-version-info">
             {t.versionPrefix} {release?.tag_name || '1.0.0'} • Windows 10/11 • {release?.assets?.[0]?.size ? (release.assets[0].size / 1024 / 1024).toFixed(0) + ` ${t.mbText}` : `~80 ${t.mbText}`}
           </span>
@@ -419,12 +439,12 @@ export default function ParoniDeck() {
           {t.faqItems.map((item, idx) => {
             const isExpanded = expandedFaq === idx;
             return (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`deck-faq-card ${isExpanded ? 'expanded' : ''}`}
               >
-                <div 
-                  className="deck-faq-header" 
+                <div
+                  className="deck-faq-header"
                   onClick={() => setExpandedFaq(isExpanded ? null : idx)}
                 >
                   <h3 style={{ margin: 0, fontSize: '1.1rem' }}>{item.title}</h3>
